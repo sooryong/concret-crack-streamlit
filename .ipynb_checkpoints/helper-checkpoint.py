@@ -37,7 +37,7 @@ def _display_detected_frames(conf, model, st_frame, image, is_display_tracking=N
     """
 
     # Resize the image to a standard size
-    image = cv2.resize(image, (720, int(720*(9/16))))
+    image = cv2.resize(image, (640, int(640*(9/16))))
 
     # Display object tracking, if specified
     if is_display_tracking:
@@ -76,7 +76,7 @@ def play_youtube_video(conf, model):
     if st.sidebar.button('Detect Objects'):
         try:
             yt = YouTube(source_youtube)
-            stream = yt.streams.filter(file_extension="mp4", res=720).first()
+            stream = yt.streams.filter(file_extension="mp4", res=640).first()
             vid_cap = cv2.VideoCapture(stream.url)
 
             st_frame = st.empty()
