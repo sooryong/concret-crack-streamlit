@@ -76,7 +76,8 @@ def play_youtube_video(conf, model):
     if st.sidebar.button('Detect Objects'):
         try:
             yt = YouTube(source_youtube)
-            stream = yt.streams.filter(file_extension="mp4", res=640).first()
+            # stream = yt.streams.filter(file_extension="mp4", res=640).first()
+            stream = yt.streams.filter(file_extension="mp4", res=640)
             vid_cap = cv2.VideoCapture(stream.url)
 
             st_frame = st.empty()
