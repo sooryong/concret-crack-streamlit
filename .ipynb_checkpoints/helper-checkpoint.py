@@ -71,7 +71,7 @@ def play_youtube_video(conf, model):
     """
     source_youtube = st.sidebar.text_input("YouTube Video url")
 
-    is_display_tracker, tracker = display_tracker_options()
+    # is_display_tracker, tracker = display_tracker_options()
 
     if st.sidebar.button('Detect Objects'):
         try:
@@ -86,10 +86,10 @@ def play_youtube_video(conf, model):
                     _display_detected_frames(conf,
                                              model,
                                              st_frame,
-                                             image,
-                                             is_display_tracker,
-                                             tracker
-                                             )
+                                             image),
+                                             # is_display_tracker,
+                                             # tracker
+                                             # )
                 else:
                     vid_cap.release()
                     break
